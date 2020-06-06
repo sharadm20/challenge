@@ -2,7 +2,7 @@
 ## Setup Development Machine
 1. Clone the repo `git clone https://github.com/sharadm20/challenge.git`
 
-2. `cd MEVN-boilerplate`
+2. `cd challenge`
 
 3. Open client
 ```
