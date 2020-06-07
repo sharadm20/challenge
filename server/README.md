@@ -2,9 +2,9 @@
 
 **Programming Quotes API for open source projects.**
 
-Homepage: [programming-quotes-api.herokuapp.com](https://programming-quotes-api.herokuapp.com)
+Server Entry: [http://localhost:8081](http://localhost:8081)
 
-Github repo: [github.com/skolakoda/programming-quotes-api](https://github.com/skolakoda/programming-quotes-api)
+Github repo: [github.com/sharadm20/challenge/server](https://github.com/sharadm20/challenge.git)
 
 ## API Documentation
 
@@ -12,17 +12,17 @@ Suported languages: en, sr.
 
 ### Public routes
 
-GET [`/quotes`](https://programming-quotes-api.herokuapp.com/quotes) (get all quotes)
+GET [`/quotes`](http://localhost:8081/quotes) (get all quotes)
 
-GET [`/quotes/lang/en`](https://programming-quotes-api.herokuapp.com/quotes/lang/en) (get quotes by language)
+GET [`/quotes/lang/en`](http://localhost:8081/quotes/lang/en) (get quotes by language)
 
-GET [`/quotes/page/2`](https://programming-quotes-api.herokuapp.com/quotes/page/2) (get quotes by page)
+GET [`/quotes/page/2`](http://localhost:8081/quotes/page/2) (get quotes by page)
 
-GET [`/quotes/random`](https://programming-quotes-api.herokuapp.com/quotes/random) (get random quote)
+GET [`/quotes/random`](http://localhost:8081/quotes/random) (get random quote)
 
-GET [`/quotes/random/lang/sr`](https://programming-quotes-api.herokuapp.com/quotes/random/lang/sr) (get random quote by language)
+GET [`/quotes/random/lang/sr`](http://localhost:8081/quotes/random/lang/sr) (get random quote by language)
 
-GET [`/quotes/id/5a6ce86f2af929789500e824`](https://programming-quotes-api.herokuapp.com/quotes/id/5a6ce86f2af929789500e824) (get quote by id)
+GET [`/quotes/id/5a6ce86f2af929789500e824`](http://localhost:8081/quotes/id/5a6ce86f2af929789500e824) (get quote by id)
 
 ### Protected routes
 
@@ -57,7 +57,7 @@ GET `/auth/{provider}:token` (get user data)
 ### Prerequisites
 
 - Install Node.js
-- Set [environment variables](https://github.com/skolakoda/baza-podataka/wiki/Environment-variables)
+- Set [environment variables](https://github.com/sharadm20/challenge/wiki/Enviornment-variable)
 
 
 ### Env variables
@@ -91,12 +91,6 @@ npm i
 npm run dev
 ```
 
-See server logs:
-
-```
-heroku logs --app programming-quotes-api
-```
-
 ### Deploy
 
-Deploy will be done automatically after merge into master branch.
+This is just a development server

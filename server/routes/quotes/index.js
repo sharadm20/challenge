@@ -3,6 +3,7 @@ const { validateUser, validateAdmin, findIfUser } = require('../../utils/helpers
 
 router.get('/', require('./read'))
 router.get('/lang/:lang', require('./readByLang'))
+router.get('/similar/lang/:lang', require('./readBySimilar'))
 router.get('/page/:pageNumber', require('./readByPage'))
 router.get('/random', require('./random'))
 router.get('/random/lang/:lang', require('./randomByLang'))

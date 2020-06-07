@@ -17,6 +17,7 @@ export default new Vuex.Store({
     provider: '',
     error: '',
     quotes: null,
+    similarQuote: null,
     ...initialState,
   },
   mutations: {
@@ -43,13 +44,20 @@ export default new Vuex.Store({
       state.quotes = null;
       state.error = 'Quotes fetching failed';
     },
-    VOTING_SUCCESS(state, { quote }) {
-      console.log(quote);
-      state.quotes = quote;
+    VOTING_SUCCESS(state, { result }) {
+      console.log(result);
+      state.quotes = result.quote;
+      state.similarQuote = result.similarQuote;
     },
     VOTING_FAIL(state, { err }) {
       console.log(err);
       state.error = 'Quotes voting failed';
+    },
+    LOGOUT(state) {
+      state.status = {};
+      state.user = null;
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
     },
   },
   actions: {
@@ -85,14 +93,19 @@ export default new Vuex.Store({
           }
         });
     },
-    vote({ commit }, { quoteId, newVote }) {
+    vote({ commit }, { quoteId, newVote, locale }) {
       const token = getToken();
-      requestPostOptions.body = JSON.stringify({ quoteId, newVote, token });
+      requestPostOptions.body = JSON.stringify({
+        quoteId, newVote, token, lang: locale,
+      });
       console.log(requestPostOptions);
       fetch(`${url}/quotes/vote`, requestPostOptions)
         .then(responseHandler)
-        .then((result) => commit('VOTING_SUCCESS', { quote: result.quote }))
+        .then((result) => commit('VOTING_SUCCESS', { result }))
         .catch((err) => commit('VOTING_FAIL', { err }));
+    },
+    logout({ commit }) {
+      commit('LOGOUT');
     },
   },
   modules: {

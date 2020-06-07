@@ -24,6 +24,7 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
+          :to="item.link"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -44,8 +45,8 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Home', icon: 'mdi-home-city' },
-        { title: 'Logout', icon: 'mdi-logout' },
+        { title: 'Home', icon: 'mdi-home-city', link: '/home' },
+        { title: 'Logout', icon: 'mdi-logout', link: '/logout' },
       ],
     };
   },

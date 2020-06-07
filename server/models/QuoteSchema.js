@@ -53,6 +53,7 @@ const Quote = {
 }
 
 const QuotesSchema = mongoose.Schema(Quote)
+QuotesSchema.index({ en: 'text'})
 
 QuotesSchema.set('toJSON', { getters: true }) // enable getters
 

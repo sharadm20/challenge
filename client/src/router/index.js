@@ -29,6 +29,14 @@ const routes = [
     },
   },
   {
+    path: '/logout',
+    name: 'Logout',
+    beforeEnter: (to, from, next) => {
+      store.dispatch('logout');
+      next({ name: 'Login' });
+    },
+  },
+  {
     path: '/home',
     name: 'Home',
     // route level code-splitting
@@ -46,7 +54,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.name !== 'Login') {
     const user = localStorage.getItem('user');
-    if (!user && user === null) {
+    if (user === 'undefined' && user === null) {
       return next('/');
     }
     return next();

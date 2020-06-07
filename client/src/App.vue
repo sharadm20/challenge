@@ -17,15 +17,8 @@
       </div>
 
       <v-spacer></v-spacer>
+        <Menu />
 
-      <v-btn
-        href="https://github.com/sharadm20/challenge.git"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -37,10 +30,12 @@
 </template>
 
 <script>
-// import Login from './components/Login.vue';
+import Menu from './components/Menu.vue';
 
 export default {
   name: 'App',
-
+  components: {
+    Menu,
+  },
 };
 </script>
