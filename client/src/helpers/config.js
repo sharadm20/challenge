@@ -1,4 +1,4 @@
-const url = 'http://localhost:8081';
+const url = 'http://ec2-34-240-16-82.eu-west-1.compute.amazonaws.com:8081';
 const requestGetOptions = {
   method: 'GET',
   headers: { 'Content-Type': 'application/json' },
